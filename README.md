@@ -1,12 +1,74 @@
-# React + Vite
+# Buku Kas Digital - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ini adalah antarmuka pengguna (UI) untuk aplikasi **Buku Kas Digital**. Aplikasi ini berfungsi sebagai klien yang berinteraksi dengan [Backend API](https://www.google.com/search?q=https://github.com/user/buku-kas-backend) untuk melakukan operasi pencatatan keuangan.
 
-Currently, two official plugins are available:
+Dibangun dengan **React** dan **Vite**, aplikasi ini menggunakan **Tanstack Query (React Query)** untuk manajemen *server state* yang efisien dan **Tailwind CSS** untuk styling yang modern dan responsif.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fitur
 
-## Expanding the ESLint configuration
+  - ✅ Menampilkan semua daftar transaksi dari server.
+  - ✅ Menambahkan transaksi baru melalui halaman form.
+  - ✅ Mengedit detail transaksi yang sudah ada.
+  - ✅ Menghapus transaksi dari daftar.
+  - ✅ Navigasi antar halaman menggunakan React Router.
+  - ✅ UI yang bersih dan fungsional.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tampilan Aplikasi
+
+*(Anda bisa menambahkan screenshot aplikasi di sini nanti)*
+`![Screenshot Aplikasi Buku Kas](./screenshot.png)`
+
+## Teknologi yang Digunakan
+
+  - **Vite**: *Build tool* generasi baru yang sangat cepat.
+  - **React**: Library utama untuk membangun antarmuka pengguna.
+  - **React Router DOM**: Untuk menangani *routing* dan navigasi antar halaman.
+  - **Tanstack Query (React Query)**: Untuk manajemen *server state* (mengambil, menyimpan cache, dan mengubah data dari API).
+  - **Axios**: Untuk melakukan permintaan HTTP ke backend API.
+  - **Tailwind CSS**: *Framework* CSS *utility-first* untuk styling.
+
+-----
+
+## Persiapan & Instalasi Lokal
+
+Untuk menjalankan proyek ini di komputer lokal Anda, ikuti langkah-langkah berikut:
+
+**1. Clone Repository**
+
+```bash
+git clone https://github.com/Ilham593/buku-kas-digital.git
+cd buku-kas-frontend
+```
+
+*(Ganti `[URL_REPO_GITHUB_ANDA]` dengan URL repository GitHub Anda sendiri)*
+
+**2. Install Dependensi**
+
+```bash
+npm install
+```
+
+**3. Konfigurasi URL Backend**
+Pastikan backend API sudah berjalan. Buka file `src/api/transactionsAPI.js` dan sesuaikan variabel `API_URL` agar menunjuk ke URL backend Anda.
+
+```javascript
+const API_URL = 'http://localhost:5000/api/transactions'; // Contoh untuk lokal
+// atau
+// const API_URL = 'https://URL-DEPLOYMENT-BACKEND-ANDA.vercel.app/api/transactions';
+```
+
+**4. Jalankan Server Development**
+
+```bash
+npm run dev
+```
+
+Aplikasi akan berjalan di `http://localhost:5173` (atau port lain yang tersedia).
+
+### Skrip yang Tersedia
+
+  - `npm run dev`: Menjalankan aplikasi dalam mode development.
+  - `npm run build`: Membuat *build* aplikasi untuk produksi.
+  - `npm run preview`: Menjalankan *build* produksi secara lokal untuk pengetesan.
+
+-----
