@@ -1,52 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchTransactionsAPI } from "./api/transactionsAPI";
-
-function App() {
-  const {
-    data: transactions,
-    error,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["transactions"],
-    queryFn: fetchTransactionsAPI,
-  });
-
-  let content;
-
-  if (isLoading) {
-    content = <p className="text-white">Loading...</p>;
-  } else if (isError) {
-    content = <p className="text-red-500">{error.message}</p>;
-  } else {
-    content = (
-      <ul className="text-white list-disc pl-5">
-        {transactions.map((t) => (
-          <li key={t._id} className="mb-2">
-            <span className="font-semibold">{t.description}</span> -
-            <span
-              className={
-                t.type === "pemasukan" ? "text-green-400" : "text-red-400"
-              }
-            >
-              Rp{t.amount.toLocaleString("id-ID")}
-            </span>
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
+import { Outlet, Link } from "react-router-dom";
+export default function App() {
   return (
-    <div className="grid h-screen place-content-center bg-gray-900">
-      <div className="p-8 bg-gray-800 rounded-lg shadow-lg w-96">
-        <h1 className="text-4xl font-bold text-cyan-400 mb-6 text-center">
-          Daftar Transaksi
-        </h1>
-        {content}
-      </div>
+    <div className="grid h-screen place-content-center bg-gray-900 font-sans">
+      <nav className="p-4 bg-gray-800 text-white rounded-t-lg">
+        <ul className="flex justify-center gap-6">
+          <li>
+            <Link to="/" className="hover:text-cyan-400">Beranda</Link>
+          </li>
+          <li>
+            <Link to="/tambah" className="hover:text-cyan-400">Tambah Transaksi</Link>
+          </li>
+        </ul>
+      </nav>
+      <main className="p-4">
+        {/* Konten halaman akan dirender di sini */}
+        <Outlet /> 
+      </main>
     </div>
   );
 }
-
-export default App;
