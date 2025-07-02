@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AddTransactionPage from "./pages/AddTransactionPage.jsx";
-
+import EditTransactionPage from "./pages/EditTransactionPage.jsx";
 // react query
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/tambah',
         element: <AddTransactionPage />
+      },
+      {
+        path: '/edit/:id',
+        element: <EditTransactionPage />
       }
     ]
   }

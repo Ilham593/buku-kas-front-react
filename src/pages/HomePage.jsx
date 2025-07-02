@@ -3,7 +3,7 @@ import {
   deleteTransactionAPI,
 } from "../api/transactionsAPI";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-
+import { Link } from "react-router-dom";
 export default function HomePage() {
   const queryClient = useQueryClient();
 
@@ -53,13 +53,20 @@ export default function HomePage() {
               </span>
             </div>
             {/* 4. Tambahkan tombol Hapus */}
-            <button
-              onClick={() => handleDelete(t._id)}
-              disabled={deleteMutation.isPending}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-xs disabled:bg-gray-500"
-            >
-              Hapus
-            </button>
+            <div className="flex gap-2">
+              <Link to={`/edit/${t._id}`}>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded text-xs">
+                  Edit
+                </button>
+              </Link>
+              <button
+                onClick={() => handleDelete(t._id)}
+                disabled={deleteMutation.isPending}
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-xs disabled:bg-gray-500"
+              >
+                Hapus
+              </button>
+            </div>
           </li>
         ))}
       </ul>

@@ -14,5 +14,16 @@ export const addTransactionAPI = async (newTransaction) => {
 
 export const deleteTransactionAPI = async (id) => {
   const response = await axios.delete(`${API_URL}/${id}`);
-  return response.data
+  return response.data.data
+};
+
+export const fetchTransactionById = async (id) => {
+  const response = await axios.get(`${API_URL}/${id}`);
+  return response.data.data;
+}
+
+
+export const updateTransactionAPI = async ({id, updateData}) => {
+  const response = await axios.patch(`${API_URL}/${id}`, updateData);
+  return response.data.data;
 };
