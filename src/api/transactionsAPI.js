@@ -11,3 +11,8 @@ export const addTransactionAPI = async (newTransaction) => {
   const response = await axios.post(API_URL, newTransaction);
   return response.data.data;
 };
+
+export const deleteTransactionAPI = async (id) => {
+  const response = await axios.delete(`${API_URL}/${id}`);
+  return response.data
+};
