@@ -13,10 +13,6 @@ Dibangun dengan **React** dan **Vite**, aplikasi ini menggunakan **Tanstack Quer
   - ✅ Navigasi antar halaman menggunakan React Router.
   - ✅ UI yang bersih dan fungsional.
 
-## Tampilan Aplikasi
-
-*(Anda bisa menambahkan screenshot aplikasi di sini nanti)*
-`![Screenshot Aplikasi Buku Kas](./screenshot.png)`
 
 ## Teknologi yang Digunakan
 
@@ -39,8 +35,6 @@ Untuk menjalankan proyek ini di komputer lokal Anda, ikuti langkah-langkah berik
 git clone https://github.com/Ilham593/buku-kas-digital.git
 cd buku-kas-frontend
 ```
-
-*(Ganti `[URL_REPO_GITHUB_ANDA]` dengan URL repository GitHub Anda sendiri)*
 
 **2. Install Dependensi**
 
